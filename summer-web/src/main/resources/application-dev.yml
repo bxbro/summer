@@ -4,3 +4,11 @@ server:
     context-path: /summer
 swagger:
   enable: true
+
+#Amazon S3配置
+summer:
+  amazons3:
+    accesskey: fd809d16971e45a8923dc8a75b526235
+    secretkey: ba64ea97f882444b9d30082bb638de62
+    endpoint: http://s3.bj.bcebos.com
+    region: bj

@@ -26,6 +26,7 @@
         <swagger2.version>2.7.0</swagger2.version>
         <swagger2.ui.version>2.7.0</swagger2.ui.version>
         <swagger.bootstrap.ui.version>1.9.3</swagger.bootstrap.ui.version>
+        <amazons3.version>1.11.821</amazons3.version>
     </properties>
 
     <dependencies>
@@ -38,6 +39,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
         </dependency>
     </dependencies>
 
