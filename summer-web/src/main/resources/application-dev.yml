@@ -7,8 +7,27 @@ swagger:
 
 #Amazon S3配置
 summer:
+  resources:
+    root-dir: D:/summer/resource_root
+    prefix: /resource
+    bgm-dir: /bgm
+    pic-dir: /pic
+    logo-dir: /logo
   amazons3:
     accesskey: fd809d16971e45a8923dc8a75b526235
     secretkey: ba64ea97f882444b9d30082bb638de62
     endpoint: http://s3.bj.bcebos.com
     region: bj
+  file-service:
+    service-type: local
+    res-url-prefix: /hxresource
+    context-path: ${server.servlet.context-path}
+    s3:
+      access-key:
+      secret-key:
+      endpoint:
+      signing-region:
+      s3-root-bucket-name: dong-box
+      path-seperator-replacor: HHEEXXIINN
+    local:
+      res-root-dir: ${summer.resources.root-dir}

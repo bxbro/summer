@@ -1,7 +1,9 @@
 package com.bxbro.web.controller;
 
+import com.bxbro.summer.fileservice.api.ResourceOperate;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,5 +23,11 @@ public class HelloController {
     public String sayHello() {
         return "Hello Miss Summer~";
     }
+
+
+    @Autowired
+    private ResourceOperate resourceOperate;
+
+
 
 }

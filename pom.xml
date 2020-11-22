@@ -8,6 +8,7 @@
         <module>summer-web</module>
         <module>summer-amazons3</module>
         <module>summer-test</module>
+        <module>summer-fileservice</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -26,7 +27,9 @@
         <swagger2.version>2.7.0</swagger2.version>
         <swagger2.ui.version>2.7.0</swagger2.ui.version>
         <swagger.bootstrap.ui.version>1.9.3</swagger.bootstrap.ui.version>
-        <amazons3.version>1.11.821</amazons3.version>
+        <aws-java-sdk-s3.version>1.11.821</aws-java-sdk-s3.version>
+        <commons-io.version>2.6</commons-io.version>
+        <slf4j-api.version>1.7.30</slf4j-api.version>
     </properties>
 
     <dependencies>
