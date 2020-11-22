@@ -1,6 +1,6 @@
-package com.bxbro.summer.fileservice.s3.config;
+package com.bxbro.web.config.props;
 
-public class S3FileServiceConfig {
+public class FileServiceS3ConfigProps {
 
     private String accessKey;
 
@@ -13,23 +13,6 @@ public class S3FileServiceConfig {
     private String s3RootBucketName;
 
     private String pathSeperatorReplacor;
-
-    public S3FileServiceConfig() {
-    }
-
-    public S3FileServiceConfig(String accessKey,
-                               String secretKey,
-                               String endpoint,
-                               String signingRegion,
-                               String s3RootBucketName,
-                               String pathSeperatorReplacor) {
-        this.accessKey = accessKey;
-        this.secretKey = secretKey;
-        this.endpoint = endpoint;
-        this.signingRegion = signingRegion;
-        this.s3RootBucketName = s3RootBucketName;
-        this.pathSeperatorReplacor = pathSeperatorReplacor;
-    }
 
     public String getAccessKey() {
         return accessKey;
