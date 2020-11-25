@@ -8,9 +8,9 @@ summer:
   resources:
     root-dir: D:/summer/resource_root
     prefix: /resource
-    bgm-dir: /bgm
     pic-dir: /pic
-    logo-dir: /logo
+    audio-dir: /audio
+    video-dir: /video
   file-service:
     service-type: local
     res-url-prefix: /resource
