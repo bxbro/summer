@@ -17,7 +17,7 @@ import java.io.InputStream;
 public class S3ResourceOperateImpl implements ResourceOperate {
 
 
-    private static final String DEFAULT_PATH_SEPERATOR_REPLACER = "HHEEXXIINN";
+    private static final String DEFAULT_PATH_SEPERATOR_REPLACER = "SUMMER";
 
     private S3Client s3Client;
 
