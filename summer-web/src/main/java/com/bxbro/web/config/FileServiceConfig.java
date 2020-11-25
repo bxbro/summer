@@ -53,23 +53,24 @@ public class FileServiceConfig {
     }
 
 
-
     private ResourceOperate initS3FileService() {
-        System.out.println("初始化S3文件存储服务");
+        logger.info("初始化S3文件存储服务");
         FileServiceS3ConfigProps s3ConfigProps = fileServiceConfigProps.getS3();
         S3FileServiceConfig config = new S3FileServiceConfig();
         BeanUtils.copyProperties(s3ConfigProps, config);
         S3Client s3Client = new S3Client(config);
         S3ResourceOperateImpl s3 = new S3ResourceOperateImpl(s3Client);
-        System.out.println("初始化S3文件存储服务完成.");
+        logger.info("初始化S3文件存储服务完成.");
         return s3;
     }
 
     private ResourceOperate initLocalFileService() {
+        logger.info("初始化本地文件存储服务");
         FileServiceLocalConfigProps localConfigProps = fileServiceConfigProps.getLocal();
         LocalFileServiceConfig config = new LocalFileServiceConfig();
         BeanUtils.copyProperties(localConfigProps, config);
         LocalResourceOperateImpl local = new LocalResourceOperateImpl(config);
+        logger.info("初始化本地文件存储服务完成.");
         return local;
     }
 

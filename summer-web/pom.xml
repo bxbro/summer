@@ -34,12 +34,7 @@
             <version>${swagger.bootstrap.ui.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.bxbro</groupId>
-            <artifactId>summer-amazons3</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
+        <!--文件服务-->
         <dependency>
             <groupId>com.bxbro</groupId>
             <artifactId>summer-fileservice-api</artifactId>
@@ -53,6 +48,13 @@
         <dependency>
             <groupId>com.bxbro</groupId>
             <artifactId>summer-fileservice-local</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!--common模块-->
+        <dependency>
+            <groupId>com.bxbro</groupId>
+            <artifactId>summer-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

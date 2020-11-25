@@ -6,7 +6,6 @@
     <modules>
         <module>summer-common</module>
         <module>summer-web</module>
-        <module>summer-amazons3</module>
         <module>summer-test</module>
         <module>summer-fileservice</module>
     </modules>
