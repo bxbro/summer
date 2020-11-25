@@ -18,6 +18,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+/**
+ *@Description Amazon S3 客户端
+ *@Author dong
+ *@Date 2020/11/22
+ */
 public class S3Client {
 
     private static  final Logger logger = LoggerFactory.getLogger(S3Client.class);
@@ -50,11 +55,21 @@ public class S3Client {
                 .build();
     }
 
+    /**
+     *@Description 获取服务器上所有的bucket
+     *@Author dong
+     *@Date 2020/11/22
+     */
     public List<Bucket> listBuckets() {
         List<Bucket> buckets = s3.listBuckets();
         return buckets;
     }
 
+    /**
+     *@Description 创建bucket
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public Bucket createBucket(String bucketName) {
         Bucket b = null;
         try {
@@ -65,14 +80,29 @@ public class S3Client {
         }
     }
 
+    /**
+     *@Description 判断bucket是否存在
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public boolean judgeBucketExist(String bucketName) {
         return s3.doesBucketExistV2(bucketName);
     }
 
+    /**
+     *@Description 删除bucket
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public void deleteBucket(String bucketName) {
         s3.deleteBucket(bucketName);
     }
 
+    /**
+     *@Description 删除object
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public void deleteObject(String bucketName, String keyName) {
         try {
             s3.deleteObject(bucketName, keyName);
@@ -81,11 +111,21 @@ public class S3Client {
         }
     }
 
+    /**
+     *@Description 查询某个bucket下所有的object
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public List<S3ObjectSummary> listAllObjectOfBucket(String bucketName) {
         ObjectListing ol = s3.listObjects(bucketName);
         return ol.getObjectSummaries();
     }
 
+    /**
+     *@Description 上传字符串
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public void putString(String bucketName, String keyName, String str){
         try {
             s3.putObject(bucketName, keyName, str);
@@ -94,6 +134,11 @@ public class S3Client {
         }
     }
 
+    /**
+     *@Description 文件上传：普通方式
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public void putObject(String bucketName, String keyName, String fileName) {
         try {
             s3.putObject(bucketName, keyName, new File(fileName));
@@ -102,6 +147,11 @@ public class S3Client {
         }
     }
 
+    /**
+     *@Description 文件上传：流式上传
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public void putStream(String bucketName, String keyName, InputStream stream) {
         try {
             s3.putObject(bucketName, keyName,stream, new ObjectMetadata());
@@ -118,6 +168,11 @@ public class S3Client {
         }
     }
 
+    /**
+     *@Description 文件下载
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public InputStream getStream(String bucketName, String keyName) {
         try{
             S3Object object = s3.getObject(bucketName, keyName);
@@ -127,6 +182,11 @@ public class S3Client {
         }
     }
 
+    /**
+     *@Description 文件下载
+     *@Author dong
+     *@Date 2020/11/25
+     */
     public byte[] get(String bucketName, String keyName) {
         S3Object object = s3.getObject(bucketName, keyName);
         S3ObjectInputStream objectContent = object.getObjectContent();
