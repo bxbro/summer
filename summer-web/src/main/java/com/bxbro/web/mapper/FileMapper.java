@@ -1,7 +1,8 @@
 package com.bxbro.web.mapper;
 
-import com.bxbro.common.entity.File;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.bxbro.common.entity.File;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author auto-generator
  * @since 2020-11-29
  */
+@Repository
 public interface FileMapper extends BaseMapper<File> {
 
 }

@@ -1,8 +1,7 @@
 package com.bxbro.web.controller;
 
 import com.bxbro.common.resp.BaseResponse;
-import com.bxbro.summer.fileservice.api.ResourceOperate;
-import com.bxbro.web.service.ResourcePathService;
+import com.bxbro.web.service.IFileService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -29,10 +28,7 @@ public class FileController {
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
     @Autowired
-    private ResourceOperate resourceOperate;
-    @Autowired
-    private ResourcePathService resourcePathService;
-
+    private IFileService fileService;
 
     /**
      *@Description 文件上传
@@ -43,10 +39,9 @@ public class FileController {
     @PostMapping
     public BaseResponse uploadFile(MultipartFile file, @RequestParam("fileType") Integer fileType) {
         try {
-            String relativePath = resourcePathService.getResourcePath(fileType) + "/" + System.currentTimeMillis() + file.getOriginalFilename();
-            resourceOperate.put(relativePath, file.getBytes());
+            fileService.uploadAndSave(file, fileType);
         } catch (IOException e) {
-            logger.error("文件上传失败", e);
+            return BaseResponse.fail("文件上传失败~");
         }
         return BaseResponse.successMsg("文件上传成功~");
     }

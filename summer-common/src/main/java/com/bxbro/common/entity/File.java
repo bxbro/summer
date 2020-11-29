@@ -38,7 +38,7 @@ public class File extends Model<File> {
     /**
      * 文件类型：0图片 1音频 2视频
      */
-    private Boolean fileType;
+    private Integer fileType;
 
     /**
      * 创建时间
@@ -53,7 +53,7 @@ public class File extends Model<File> {
     /**
      * 是否删除标志位
      */
-    private Boolean deleted;
+    private Integer deleted;
 
 
     public Long getId() {
@@ -80,14 +80,6 @@ public class File extends Model<File> {
         this.fileUrl = fileUrl;
     }
 
-    public Boolean getFileType() {
-        return fileType;
-    }
-
-    public void setFileType(Boolean fileType) {
-        this.fileType = fileType;
-    }
-
     public Long getCtime() {
         return ctime;
     }
@@ -104,11 +96,19 @@ public class File extends Model<File> {
         this.mtime = mtime;
     }
 
-    public Boolean getDeleted() {
+    public Integer getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(Integer fileType) {
+        this.fileType = fileType;
+    }
+
+    public Integer getDeleted() {
         return deleted;
     }
 
-    public void setDeleted(Boolean deleted) {
+    public void setDeleted(Integer deleted) {
         this.deleted = deleted;
     }
 
