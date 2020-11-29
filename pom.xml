@@ -29,6 +29,8 @@
         <aws-java-sdk-s3.version>1.11.821</aws-java-sdk-s3.version>
         <commons-io.version>2.6</commons-io.version>
         <slf4j-api.version>1.7.30</slf4j-api.version>
+        <mybatis-plus-generator.version>3.2.0</mybatis-plus-generator.version>
+        <velocity-engine-core.version>2.0</velocity-engine-core.version>
     </properties>
 
     <dependencies>
