@@ -3,7 +3,7 @@
 <mapper namespace="com.bxbro.web.mapper.FileMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.bxbro.web.entity.File">
+    <resultMap id="BaseResultMap" type="com.bxbro.common.entity.File">
         <id column="id" property="id" />
         <result column="file_name" property="fileName" />
         <result column="file_url" property="fileUrl" />

@@ -1,6 +1,6 @@
 package com.bxbro.web.service;
 
-import com.bxbro.web.entity.File;
+import com.bxbro.common.entity.File;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

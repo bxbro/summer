@@ -1,6 +1,6 @@
 package com.bxbro.web.mapper;
 
-import com.bxbro.web.entity.File;
+import com.bxbro.common.entity.File;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

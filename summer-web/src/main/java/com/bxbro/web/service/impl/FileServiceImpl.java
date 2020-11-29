@@ -1,6 +1,6 @@
 package com.bxbro.web.service.impl;
 
-import com.bxbro.web.entity.File;
+import com.bxbro.common.entity.File;
 import com.bxbro.web.mapper.FileMapper;
 import com.bxbro.web.service.IFileService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
