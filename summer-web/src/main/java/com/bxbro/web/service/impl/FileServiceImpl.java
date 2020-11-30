@@ -41,19 +41,23 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Override
     public void uploadAndSave(MultipartFile file, Integer fileType) throws IOException {
 
+        String fileName = file.getOriginalFilename();
+        int idx = fileName.lastIndexOf(".");
+        String suffix = fileName.substring(idx);
+
         String relativePath = resourcePathService.getResourcePath(fileType)
-                + "/" + System.currentTimeMillis() + file.getOriginalFilename();
+                + "/" + System.currentTimeMillis() + suffix;
         resourceOperate.put(relativePath, file.getBytes());
         logger.info("文件[{}]上传成功", file.getOriginalFilename());
 
         File newFile = new File();
-        newFile.setFileName(file.getOriginalFilename());
+        newFile.setFileName(fileName);
         newFile.setFileUrl(relativePath);
         newFile.setFileType(fileType);
         newFile.setCtime(System.currentTimeMillis());
         newFile.setMtime(0L);
         newFile.setDeleted(ResourceStatus.UNDELETED);
         fileMapper.insert(newFile);
-        logger.info("文件[{}]入库成功", file.getOriginalFilename());
+        logger.info("文件[{}]入库成功", fileName);
     }
 }

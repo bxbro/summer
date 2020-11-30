@@ -24,7 +24,7 @@ summer:
     audio-dir: /audio
     video-dir: /video
   file-service:
-    service-type: local
+    service-type: s3
     res-url-prefix: /resource
     context-path: ${server.servlet.context-path}
     s3: #Amazon S3配置
