@@ -1,6 +1,6 @@
 package com.bxbro.web.service;
 
-import com.bxbro.web.service.impl.MailServiceImpl;
+import com.bxbro.web.service.impl.MailScheduledServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class MailServiceTest {
 
     @Autowired
-    MailServiceImpl mailService;
+    MailScheduledServiceImpl mailService;
 
     @Test
     public void testSendMail() {

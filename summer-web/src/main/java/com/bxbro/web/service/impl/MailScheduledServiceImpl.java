@@ -10,14 +10,14 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 /**
- * @Description 发送邮件
+ * @Description 定时任务：发送邮件
  * @Author dong
  * @Date 2020/12/2
  */
 @Service
-public class MailServiceImpl {
+public class MailScheduledServiceImpl {
 
-    private static final Logger logger = LoggerFactory.getLogger(MailServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(MailScheduledServiceImpl.class);
 
     @Autowired
     JavaMailSenderImpl javaMailSender;  // todo 不知道为什么提示注入失败，但是能调得通
