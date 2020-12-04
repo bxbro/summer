@@ -14,6 +14,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/summer?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     type: com.alibaba.druid.pool.DruidDataSource
+  mail:
+    username: 1756330108@qq.com
+    password: qxkusgfdmsltcdbg
+    default-encoding: utf-8
+    host: smtp.qq.com
 swagger:
   enable: true
 summer:
@@ -36,3 +41,10 @@ summer:
       path-seperator-replacor: SUMMER
     local:
       res-root-dir: ${summer.resources.root-dir}
+  mail:
+    subject: About Love
+    content: summer is coming，summer is coming
+    from-address: 1756330108@qq.com
+    to-address: 1756330108@qq.com
+    # 开发调试  每分钟  0 0/1 * * * ?
+    cron: 0 0/1 * * * ?
