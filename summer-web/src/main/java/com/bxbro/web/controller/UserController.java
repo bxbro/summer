@@ -9,6 +9,7 @@ import com.bxbro.common.resp.StatusCode;
 import com.bxbro.web.Param.UserParam;
 import com.bxbro.web.service.IUserService;
 import com.bxbro.web.vo.UserVO;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import java.util.List;
  * @author auto-generator
  * @since 2020-12-05
  */
+@Api(value = "用户管理", tags = "用户管理模块")
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {
