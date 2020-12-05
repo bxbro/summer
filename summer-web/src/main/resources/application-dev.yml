@@ -46,5 +46,5 @@ summer:
     content: summer is coming，summer is coming
     from-address: 1756330108@qq.com
     to-address: 1756330108@qq.com
-    # 开发调试  每分钟  0 0/1 * * * ?
-    cron: 0 0/1 * * * ?
+    # 开发调试  每分钟  0 0/1 * * * ?   每天  0 0 0 1/1 * ?
+    cron: 0 0 0 1/1 * ?
