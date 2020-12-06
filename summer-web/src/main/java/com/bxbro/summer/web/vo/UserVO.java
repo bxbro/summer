@@ -18,9 +18,9 @@ public class UserVO {
     private String userName;
 
     /**
-     * 性别
+     * 性别: 0女  1男
      */
-    private Integer gender;
+    private String genderStr;
 
     /**
      * 年龄
@@ -73,12 +73,12 @@ public class UserVO {
         this.userName = userName;
     }
 
-    public Integer getGender() {
-        return gender;
+    public String getGenderStr() {
+        return genderStr;
     }
 
-    public void setGender(Integer gender) {
-        this.gender = gender;
+    public void setGenderStr(String genderStr) {
+        this.genderStr = genderStr;
     }
 
     public Integer getAge() {

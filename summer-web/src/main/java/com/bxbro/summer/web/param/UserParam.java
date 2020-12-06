@@ -1,49 +1,61 @@
-package com.bxbro.summer.web.Param;
+package com.bxbro.summer.web.param;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @Description TODO
  * @Author dong
  * @Date 2020/12/5
  */
+@ApiModel("用户")
 public class UserParam {
 
     /**
      * 主键id
      */
+    @ApiModelProperty("主键id")
     private Long id;
     /**
      * 用户名
      */
+    @ApiModelProperty("用户名")
     private String userName;
 
     /**
      * 密码
      */
+    @ApiModelProperty("密码")
     private String password;
 
     /**
      * 性别
      */
+    @ApiModelProperty("性别")
     private Integer gender;
 
     /**
      * 年龄
      */
+    @ApiModelProperty("年龄")
     private Integer age;
 
     /**
      * 联系方式
      */
+    @ApiModelProperty("联系方式")
     private String phone;
 
     /**
      * 住址
      */
+    @ApiModelProperty("住址")
     private String address;
 
     /**
      * 电子邮箱
      */
+    @ApiModelProperty("电子邮箱")
     private String email;
 
     public Long getId() {

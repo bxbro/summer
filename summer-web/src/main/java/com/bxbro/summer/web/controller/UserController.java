@@ -6,13 +6,16 @@ import com.bxbro.summer.common.constant.ResourceStatus;
 import com.bxbro.summer.common.entity.User;
 import com.bxbro.summer.common.resp.BaseResponse;
 import com.bxbro.summer.common.resp.StatusCode;
-import com.bxbro.summer.web.Param.UserParam;
+import com.bxbro.summer.web.constant.UserConstant;
+import com.bxbro.summer.web.param.UserParam;
 import com.bxbro.summer.web.service.IUserService;
 import com.bxbro.summer.web.vo.UserVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -37,8 +40,12 @@ public class UserController {
     @ApiOperation(value = "新增用户")
     @PostMapping
     public BaseResponse addUser(UserParam userParam) {
+        if (StringUtils.isEmpty(userParam.getUserName()) || StringUtils.isEmpty(userParam.getPassword())) {
+            return BaseResponse.fail("用户名或密码为空");
+        }
         User user = new User();
         BeanUtil.copyProperties(userParam, user);
+        user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));
         user.setCtime(System.currentTimeMillis());
         user.setMtime(System.currentTimeMillis());
         user.setDeleted(ResourceStatus.UNDELETED);
@@ -71,6 +78,14 @@ public class UserController {
         userList.forEach((e)->{
             UserVO vo = new UserVO();
             BeanUtil.copyProperties(e, vo);
+
+            if (UserConstant.Gender.WOMEN.getCode().equals(e.getGender())) {
+                vo.setGenderStr(UserConstant.Gender.WOMEN.getName());
+            } else if (UserConstant.Gender.MAN.getCode().equals(e.getGender())) {
+                vo.setGenderStr(UserConstant.Gender.MAN.getName());
+            } else {
+                vo.setGenderStr(UserConstant.Gender.UNKNOWN.getName());
+            }
             userVOList.add(vo);
         });
         return BaseResponse.success(userVOList);
