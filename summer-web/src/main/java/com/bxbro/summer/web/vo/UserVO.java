@@ -18,7 +18,7 @@ public class UserVO {
     private String userName;
 
     /**
-     * 性别: 0女  1男
+     * {@link com.bxbro.summer.web.constant.UserConstant.Gender}
      */
     private String genderStr;
 
@@ -53,7 +53,7 @@ public class UserVO {
     private Long mtime;
 
     /**
-     * 是否删除标志位 (0 未删除, 1 已删除)
+     * {@link com.bxbro.summer.common.constant.ResourceStatus}
      */
     private Integer deleted;
 

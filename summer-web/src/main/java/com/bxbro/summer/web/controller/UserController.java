@@ -92,10 +92,18 @@ public class UserController {
     }
 
 
-    @ApiOperation(value = "删除单个用户")
+    @ApiOperation(value = "删除单个用户-软删除")
     @DeleteMapping("/{id}")
     public BaseResponse deleteUser(@ApiParam(value = "用户id") @PathVariable("id") Long id) {
-        boolean result = userService.removeById(id);
+        if (id == null) {
+            return BaseResponse.fail("未传用户id");
+        }
+        User user = userService.getById(id);
+        if (user == null) {
+            return BaseResponse.fail("该id不正确，没有找到相应的用户");
+        }
+        user.setDeleted(ResourceStatus.DELETED);
+        boolean result = userService.updateById(user);
         if (result) {
             return BaseResponse.success(StatusCode.SUCCESS);
         } else {
