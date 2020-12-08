@@ -2,6 +2,7 @@ package com.bxbro.summer.web.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.bxbro.summer.common.entity.User;
+import com.bxbro.summer.web.vo.UserVO;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public interface IUserService extends IService<User> {
     /**
      *@Description 分页查询用户列表
      *@Author dong
-     *@Date 2020/12/5
+     *@Date 2020/12/8
      */
-    List<User> selectUserList(int pageNo, int pageSize);
+    List<UserVO> listUsers(int pageNo, int pageSize);
 }

@@ -1,14 +1,18 @@
 package com.bxbro.summer.web.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bxbro.summer.common.entity.User;
+import com.bxbro.summer.web.constant.UserConstant;
 import com.bxbro.summer.web.mapper.UserMapper;
 import com.bxbro.summer.web.service.IUserService;
+import com.bxbro.summer.web.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,11 +29,27 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Autowired
     private UserMapper userMapper;
 
+
     @Override
-    public List<User> selectUserList(int pageNo, int pageSize) {
+    public List<UserVO> listUsers(int pageNo, int pageSize) {
         IPage<User> page = new Page<>(pageNo, pageSize);
         page = userMapper.selectPage(page, null);
         List<User> userList = page.getRecords();
-        return userList;
+        List<UserVO> userVOList = new ArrayList<>();
+
+        userList.forEach((e)->{
+            UserVO vo = new UserVO();
+            BeanUtil.copyProperties(e, vo);
+
+            if (UserConstant.Gender.WOMEN.getCode().equals(e.getGender())) {
+                vo.setGenderStr(UserConstant.Gender.WOMEN.getName());
+            } else if (UserConstant.Gender.MAN.getCode().equals(e.getGender())) {
+                vo.setGenderStr(UserConstant.Gender.MAN.getName());
+            } else {
+                vo.setGenderStr(UserConstant.Gender.UNKNOWN.getName());
+            }
+            userVOList.add(vo);
+        });
+        return userVOList;
     }
 }

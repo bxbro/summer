@@ -39,7 +39,7 @@ public class UserController {
 
     @ApiOperation(value = "新增用户")
     @PostMapping
-    public BaseResponse addUser(UserParam userParam) {
+    public BaseResponse saveUser(UserParam userParam) {
         if (StringUtils.isEmpty(userParam.getUserName()) || StringUtils.isEmpty(userParam.getPassword())) {
             return BaseResponse.fail("用户名或密码为空");
         }
@@ -71,23 +71,9 @@ public class UserController {
 
     @ApiOperation(value = "分页查询用户列表")
     @GetMapping
-    public BaseResponse<List<UserVO>> getUserList(@ApiParam(value = "页码") @RequestParam("pageNo") int pageNo,
+    public BaseResponse<List<UserVO>> listUsers(@ApiParam(value = "页码") @RequestParam("pageNo") int pageNo,
                                                   @ApiParam(value = "每页显示条数") @RequestParam("pageSize") int pageSize) {
-        List<User> userList = userService.selectUserList(pageNo, pageSize);
-        List<UserVO> userVOList = new ArrayList<>();
-        userList.forEach((e)->{
-            UserVO vo = new UserVO();
-            BeanUtil.copyProperties(e, vo);
-
-            if (UserConstant.Gender.WOMEN.getCode().equals(e.getGender())) {
-                vo.setGenderStr(UserConstant.Gender.WOMEN.getName());
-            } else if (UserConstant.Gender.MAN.getCode().equals(e.getGender())) {
-                vo.setGenderStr(UserConstant.Gender.MAN.getName());
-            } else {
-                vo.setGenderStr(UserConstant.Gender.UNKNOWN.getName());
-            }
-            userVOList.add(vo);
-        });
+        List<UserVO> userVOList = userService.listUsers(pageNo, pageSize);
         return BaseResponse.success(userVOList);
     }
 
