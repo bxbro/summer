@@ -43,13 +43,7 @@ public class UserController {
         if (StringUtils.isEmpty(userParam.getUserName()) || StringUtils.isEmpty(userParam.getPassword())) {
             return BaseResponse.fail("用户名或密码为空");
         }
-        User user = new User();
-        BeanUtil.copyProperties(userParam, user);
-        user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));
-        user.setCtime(System.currentTimeMillis());
-        user.setMtime(System.currentTimeMillis());
-        user.setDeleted(ResourceStatus.UNDELETED);
-        userService.save(user);
+        userService.saveUser(userParam);
         return BaseResponse.success(StatusCode.SUCCESS);
     }
 
