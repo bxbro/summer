@@ -6,7 +6,6 @@ import com.bxbro.summer.common.constant.ResourceStatus;
 import com.bxbro.summer.common.entity.User;
 import com.bxbro.summer.common.resp.BaseResponse;
 import com.bxbro.summer.common.resp.StatusCode;
-import com.bxbro.summer.web.constant.UserConstant;
 import com.bxbro.summer.web.param.UserParam;
 import com.bxbro.summer.web.service.IUserService;
 import com.bxbro.summer.web.vo.UserVO;
@@ -15,10 +14,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *   用户实体类
  * </p>
  *
  * @author auto-generator
@@ -59,6 +59,10 @@ public class User extends Model<User> {
      * 电子邮箱
      */
     private String email;
+    /**
+     * 是否在线
+     */
+    private Integer online;
 
     /**
      * 创建时间
@@ -164,6 +168,14 @@ public class User extends Model<User> {
         this.deleted = deleted;
     }
 
+    public Integer getOnline() {
+        return online;
+    }
+
+    public void setOnline(Integer online) {
+        this.online = online;
+    }
+
     public static final String ID = "id";
 
     public static final String USER_NAME = "user_name";
@@ -179,6 +191,7 @@ public class User extends Model<User> {
     public static final String ADDRESS = "address";
 
     public static final String EMAIL = "email";
+    public static final String ONLINE = "online";
 
     public static final String CTIME = "ctime";
 
@@ -194,17 +207,18 @@ public class User extends Model<User> {
     @Override
     public String toString() {
         return "User{" +
-        "id=" + id +
-        ", userName=" + userName +
-        ", password=" + password +
-        ", gender=" + gender +
-        ", age=" + age +
-        ", phone=" + phone +
-        ", address=" + address +
-        ", email=" + email +
-        ", ctime=" + ctime +
-        ", mtime=" + mtime +
-        ", deleted=" + deleted +
-        "}";
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", gender=" + gender +
+                ", age=" + age +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", online=" + online +
+                ", ctime=" + ctime +
+                ", mtime=" + mtime +
+                ", deleted=" + deleted +
+                '}';
     }
 }

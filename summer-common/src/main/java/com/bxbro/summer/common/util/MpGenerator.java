@@ -96,7 +96,7 @@ public class MpGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.bxbro");
+        pc.setParent("com.bxbro.summer");
         pc.setEntity("entity");
         pc.setMapper("mapper");
         pc.setService("service");
