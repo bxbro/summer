@@ -34,6 +34,8 @@
         <druid.version>1.1.23</druid.version>
         <mybatis-plus-boot-starter.version>3.2.0</mybatis-plus-boot-starter.version>
         <mybatis-plus-extension.version>3.2.0</mybatis-plus-extension.version>
+        <hutool.version>4.1.1</hutool.version>
+        <fastjson.version>1.2.47</fastjson.version>
     </properties>
 
 
