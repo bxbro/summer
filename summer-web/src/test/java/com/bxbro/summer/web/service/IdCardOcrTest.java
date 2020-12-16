@@ -24,18 +24,18 @@ import java.util.Map;
  */
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
-public class IdCardOcr {
+public class IdCardOcrTest {
 
     /**
      * 身份证识别接口url: http(s)://dm-51.data.aliyun.com/rest/160601/ocr/ocr_idcard.json
      * 接口文档：https://market.aliyun.com/products/57124001/cmapi010401.html?spm=5176.2020520132.101.2.56f87218zgEQU1#sku=yuncode440100000
      */
     @Test
-    public void AliyunTest() {
+    public void aliyunTest() {
         String host = "http://dm-51.data.aliyun.com";
         String path = "/rest/160601/ocr/ocr_idcard.json";
         String appcode = "6b0a6c34244e48fd8fa8d776b38d1b2e";
-        String imgFile = "E:\\workImges\\1.jpg";// 身份证正面
+        String imgFile = "D:\\img\\1.jpg";// 身份证正面
         String method = "POST";
 
         Map<String, String> headers = new HashMap<String, String>();
