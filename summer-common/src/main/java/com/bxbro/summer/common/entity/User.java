@@ -63,6 +63,10 @@ public class User extends Model<User> {
      * 是否在线
      */
     private Integer online;
+    /**
+     * 上次在线时间
+     */
+    private String lastTimeOnline;
 
     /**
      * 创建时间
@@ -176,6 +180,14 @@ public class User extends Model<User> {
         this.online = online;
     }
 
+    public String getLastTimeOnline() {
+        return lastTimeOnline;
+    }
+
+    public void setLastTimeOnline(String lastTimeOnline) {
+        this.lastTimeOnline = lastTimeOnline;
+    }
+
     public static final String ID = "id";
 
     public static final String USER_NAME = "user_name";
@@ -216,6 +228,7 @@ public class User extends Model<User> {
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", online=" + online +
+                ", lastTimeOnline='" + lastTimeOnline + '\'' +
                 ", ctime=" + ctime +
                 ", mtime=" + mtime +
                 ", deleted=" + deleted +

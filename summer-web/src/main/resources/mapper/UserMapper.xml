@@ -13,6 +13,7 @@
         <result column="address" property="address" />
         <result column="email" property="email" />
         <result column="online" property="online" />
+        <result column="last_time_online" property="lastTimeOnline"/>
         <result column="ctime" property="ctime" />
         <result column="mtime" property="mtime" />
         <result column="deleted" property="deleted" />

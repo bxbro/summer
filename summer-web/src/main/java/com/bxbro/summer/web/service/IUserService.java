@@ -2,9 +2,12 @@ package com.bxbro.summer.web.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.bxbro.summer.common.entity.User;
+import com.bxbro.summer.common.resp.BaseResponse;
 import com.bxbro.summer.web.param.UserParam;
 import com.bxbro.summer.web.vo.UserVO;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -29,4 +32,10 @@ public interface IUserService extends IService<User> {
      *@Date 2020/12/8
      */
     void saveUser(UserParam userParam);
+    /**
+     *@Description 登录
+     *@Author dong
+     *@Date 2020/12/18
+     */
+    BaseResponse login(HttpServletRequest request, HttpServletResponse response);
 }
