@@ -35,7 +35,7 @@ public class IdCardOcrTest {
         String host = "http://dm-51.data.aliyun.com";
         String path = "/rest/160601/ocr/ocr_idcard.json";
         String appcode = "6b0a6c34244e48fd8fa8d776b38d1b2e";
-        String imgFile = "D:\\img\\1.jpg";// 身份证正面
+        String imgFile = "E:\\workImges\\1.jpg";// 身份证正面
         String method = "POST";
 
         Map<String, String> headers = new HashMap<String, String>();

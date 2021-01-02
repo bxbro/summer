@@ -4,6 +4,8 @@ import java.util.regex.Pattern;
 
 /**
  * 校验器：利用正则表达式校验邮箱/手机号等等
+ * @author dong
+ * @date 2020/12/29
  */
 public class ValidatorUtil {
 

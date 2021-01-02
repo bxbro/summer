@@ -13,9 +13,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserLockService extends IService<UserLock> {
     /**
-     *@Description 根据userId查询userLock
-     *@Author dong
-     *@Date 2020/12/18
-     */
+    * 根据userId查询userLock
+    * @author dong
+    * @date 2020/12/18
+    * @param userId
+    * @return com.bxbro.summer.common.entity.UserLock
+    */
     UserLock getUserLockByUserId(Long userId);
 }

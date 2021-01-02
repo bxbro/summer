@@ -2,7 +2,11 @@ package com.bxbro.summer.fileservice.local.exception;
 
 import com.bxbro.summer.fileservice.api.exception.FileServiceException;
 
-
+/**
+ *@Description 本地文件服务统一异常
+ *@Author dong
+ *@Date 2020/12/29
+ */
 public class LocalFileServiceException extends FileServiceException {
     public LocalFileServiceException() {
     }

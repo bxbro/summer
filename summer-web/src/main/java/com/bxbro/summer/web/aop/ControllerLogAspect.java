@@ -28,35 +28,35 @@ public class ControllerLogAspect {
     private static ThreadLocal<Long> threadLocal = new ThreadLocal<>();
 
     @Pointcut("execution(* com.bxbro.summer.web.controller..*.*(..))")
-    public void WebRequest() {
+    public void webRequest() {
     }
 
-    @Before("WebRequest()")
+    @Before("webRequest()")
     public void beforeMethod(JoinPoint joinPoint){
         logger.info("调用了前置通知");
     }
 
     //@After: 后置通知
-    @After("WebRequest()")
+    @After("webRequest()")
     public void afterMethod(JoinPoint joinPoint){
         logger.info("调用了后置通知");
     }
 
     //@AfterRunning: 返回通知 rsult为返回内容
-    @AfterReturning(value="WebRequest()",returning="result")
+    @AfterReturning(value="webRequest()",returning="result")
     public void afterReturningMethod(JoinPoint joinPoint,Object result){
         logger.info("调用了返回通知");
     }
 
     //@AfterThrowing: 异常通知
-    @AfterThrowing(value="WebRequest()",throwing="e")
+    @AfterThrowing(value="webRequest()",throwing="e")
     public void afterReturningMethod(JoinPoint joinPoint, Exception e){
         logger.info("调用了异常通知");
     }
 
     //@Around：环绕通知
-    @Around("WebRequest()")
-    public Object Around(ProceedingJoinPoint pjp) throws Throwable {
+    @Around("webRequest()")
+    public Object around(ProceedingJoinPoint pjp) throws Throwable {
         threadLocal.set(System.currentTimeMillis());
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         logger.warn("[Thread:{}] - URL = {}, METHOD = {}, ARGS = {}", Thread.currentThread().getId(), request.getRequestURL(), request.getMethod(), pjp.getArgs());
@@ -66,7 +66,6 @@ public class ControllerLogAspect {
 
         HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
         if(logger.isWarnEnabled()) {
-            //LOGGER.warn("[Thread:{}] - 请求处理完毕, 状态 : {}, 耗时（毫秒）: {}, 结果 : {}", Thread.currentThread().getId(), response.getStatus(), System.currentTimeMillis() - threadLocal.get(), JSON.toJSONString(rvt));
             logger.warn(" [Thread:{}] - 请求处理完毕, 状态 : {}, 耗时（毫秒）: {}",  Thread.currentThread().getId(), response.getStatus(), System.currentTimeMillis() - threadLocal.get());
         }
         threadLocal.remove();

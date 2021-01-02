@@ -17,6 +17,11 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ *@Description 文件服务配置类
+ *@Author dong
+ *@Date 2020/12/29
+ */
 @Configuration
 @EnableConfigurationProperties(FileServiceConfigProps.class)
 public class FileServiceConfig {
@@ -43,7 +48,6 @@ public class FileServiceConfig {
     }
 
 
-    // 外网调试S3接口使用 todo
     @Bean
     public S3Client s3Client() {
         FileServiceS3ConfigProps s3ConfigProps = fileServiceConfigProps.getS3();

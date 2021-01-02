@@ -1,5 +1,10 @@
 package com.bxbro.summer.fileservice.s3.config;
 
+/**
+ * s3文件服务的配置
+ * @author dong
+ * @date 2020/12/29
+ */
 public class S3FileServiceConfig {
 
     private String accessKey;

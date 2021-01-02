@@ -1,8 +1,8 @@
 package com.bxbro.summer.test;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
+import java.util.concurrent.*;
 
 /**
  * @Description 场景：模拟10人赛跑。10人跑完后才喊 "Game Over."
@@ -22,17 +22,20 @@ public class CountDownLatchTest {
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch begin = new CountDownLatch(1);
         CountDownLatch end = new CountDownLatch(RUNNER_COUNT);
-        ExecutorService exec = Executors.newFixedThreadPool(10);
+
+        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("demo-pool-%d").build();
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(5, 200, 0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
 
         for (int i = 0; i < RUNNER_COUNT; i++) {
-            int NO = i + 1;
+            int seq = i + 1;
             Runnable run = new Runnable() {
                 @Override
                 public void run() {
                     try{
                         begin.await();
                         Thread.sleep((long) (Math.random() * 10000));
-                        System.out.println("No." + NO + " arrived.");
+                        System.out.println("No." + seq + " arrived.");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {
@@ -40,7 +43,7 @@ public class CountDownLatchTest {
                     }
                 }
             };
-            exec.submit(run);
+            pool.submit(run);
         }
         System.out.println("Game Start...");
 
@@ -51,6 +54,6 @@ public class CountDownLatchTest {
         end.await();
 
         System.out.println("Game Over.");
-        exec.shutdown();
+        pool.shutdown();
     }
 }

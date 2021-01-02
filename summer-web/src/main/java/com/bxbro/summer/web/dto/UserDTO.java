@@ -135,4 +135,20 @@ public class UserDTO {
     public void setDeleted(Integer deleted) {
         this.deleted = deleted;
     }
+
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", gender=" + gender +
+                ", age=" + age +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", ctime=" + ctime +
+                ", mtime=" + mtime +
+                ", deleted=" + deleted +
+                '}';
+    }
 }

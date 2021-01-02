@@ -115,7 +115,6 @@ public class MpGenerator {
         mpg.setStrategy(strategy);
 
 
-
         // 自定义模板配置，可以 copy 源码 mybatis-plus/src/main/resources/templates 下面内容修改，
         // 放置自己项目的 src/main/resources/templates 目录下, 默认名称一下可以不配置，也可以自定义模板名称
         TemplateConfig tc = new TemplateConfig();
@@ -128,11 +127,9 @@ public class MpGenerator {
         // 如上任何一个模块如果设置 空 OR Null 将不生成该模块。
         // mpg.setTemplate(tc);
 
-        // 执行生成
         mpg.setConfig(new ConfigBuilder(pc,dsc,strategy,tc,gc));
 
         ConfigBuilder config = mpg.getConfig();
-
         Map<String, String> pathInfo = config.getPathInfo();
 
         //目录设置修改

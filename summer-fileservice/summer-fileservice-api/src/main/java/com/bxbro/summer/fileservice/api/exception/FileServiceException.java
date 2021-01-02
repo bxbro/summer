@@ -1,5 +1,10 @@
 package com.bxbro.summer.fileservice.api.exception;
 
+/**
+ *@Description 文件服务统一异常
+ *@Author dong
+ *@Date 2020/12/29
+ */
 public class FileServiceException extends RuntimeException {
 
     public FileServiceException() {

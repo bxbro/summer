@@ -1,6 +1,7 @@
 package com.bxbro.summer.web.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -9,7 +10,7 @@ import com.bxbro.summer.common.constant.ResourceStatus;
 import com.bxbro.summer.common.entity.User;
 import com.bxbro.summer.common.entity.UserLock;
 import com.bxbro.summer.common.resp.BaseResponse;
-import com.bxbro.summer.common.util.DateUtil;
+import com.bxbro.summer.common.util.DateUtils;
 import com.bxbro.summer.web.constant.UserConstant;
 import com.bxbro.summer.web.mapper.UserMapper;
 import com.bxbro.summer.web.param.UserParam;
@@ -42,6 +43,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private UserMapper userMapper;
     @Autowired
     private IUserLockService userLockService;
+
+    // 登录失败重试次数
+    private static final int RETRY_TIMES = 3;
 
 
     @Override
@@ -95,14 +99,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             if (userLock == null) {
                 UserLock newUserLock = new UserLock();
                 newUserLock.setFailCount(1);
-                newUserLock.setLoginTime(DateUtil.getDateTime(new Date()));
+                newUserLock.setLoginTime(DateUtils.getStringTimeDateLatest(new Date()));
                 newUserLock.setUserId(user.getId());
                 newUserLock.setUserName(user.getUserName());
                 userLockService.save(newUserLock);
             } else {
-                if (userLock.getFailCount()>=3) {
+                if (userLock.getFailCount() >= RETRY_TIMES) {
                     return BaseResponse.fail("今日登录失败次数已达三次，请半小时后重试");
-                }else {
+                } else {
                     userLock.setFailCount(userLock.getFailCount() + 1);
                     userLockService.saveOrUpdate(userLock);
                 }

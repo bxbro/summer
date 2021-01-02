@@ -7,7 +7,9 @@ package com.bxbro.summer.common.constant;
  */
 public class ResourceStatus {
 
-    // 0 未删除  -1 已删除
+    /**
+     * 0 未删除  -1 已删除
+     */
     public static final int UNDELETED = 0;
     public static final int DELETED = -1;
 }

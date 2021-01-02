@@ -137,4 +137,19 @@ public class UserVO {
         this.deleted = deleted;
     }
 
+    @Override
+    public String toString() {
+        return "UserVO{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", genderStr='" + genderStr + '\'' +
+                ", age=" + age +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", ctime=" + ctime +
+                ", mtime=" + mtime +
+                ", deleted=" + deleted +
+                '}';
+    }
 }

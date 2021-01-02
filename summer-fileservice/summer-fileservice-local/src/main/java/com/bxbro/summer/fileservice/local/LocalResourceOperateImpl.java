@@ -9,6 +9,11 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ *@Description 本地资源操作实现类
+ *@Author dong
+ *@Date 2020/12/29
+ */
 public class LocalResourceOperateImpl implements ResourceOperate {
 
 

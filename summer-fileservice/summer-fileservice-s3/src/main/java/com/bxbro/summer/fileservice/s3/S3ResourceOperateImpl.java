@@ -13,6 +13,8 @@ import java.io.InputStream;
 
 /**
  * 文件服务 amazon S3实现
+ * @author dong
+ * @date 2020/12/29
  */
 public class S3ResourceOperateImpl implements ResourceOperate {
 

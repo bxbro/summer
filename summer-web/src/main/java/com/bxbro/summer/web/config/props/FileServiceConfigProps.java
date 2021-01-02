@@ -2,6 +2,11 @@ package com.bxbro.summer.web.config.props;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ *@Description 文件服务配置属性类
+ *@Author dong
+ *@Date 2020/12/29
+ */
 @ConfigurationProperties(prefix = "summer.file-service")
 public class FileServiceConfigProps {
 

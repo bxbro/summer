@@ -19,23 +19,30 @@ import java.util.List;
  * @since 2020-12-05
  */
 public interface IUserService extends IService<User> {
-
     /**
-     *@Description 分页查询用户列表
-     *@Author dong
-     *@Date 2020/12/8
-     */
+    * 分页查询用户列表
+    * @author dong
+    * @date 2020/12/8
+    * @param pageNo
+    * @param pageSize
+    * @return java.util.List<com.bxbro.summer.web.vo.UserVO>
+    */
     List<UserVO> listUsers(int pageNo, int pageSize);
     /**
-     *@Description 新增用户
-     *@Author dong
-     *@Date 2020/12/8
-     */
+    * 新增用户
+    * @author dong
+    * @date 2020/12/8
+    * @param userParam
+    * @return void
+    */
     void saveUser(UserParam userParam);
     /**
-     *@Description 登录
-     *@Author dong
-     *@Date 2020/12/18
-     */
+    * 登录
+    * @author dong
+    * @date 2020/12/18
+    * @param request
+    * @param response
+    * @return com.bxbro.summer.common.resp.BaseResponse
+    */
     BaseResponse login(HttpServletRequest request, HttpServletResponse response);
 }

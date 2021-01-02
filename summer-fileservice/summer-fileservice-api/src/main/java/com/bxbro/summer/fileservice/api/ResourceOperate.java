@@ -2,6 +2,11 @@ package com.bxbro.summer.fileservice.api;
 
 import com.bxbro.summer.fileservice.api.exception.FileServiceException;
 
+/**
+ *@Description 资源操作api
+ *@Author dong
+ *@Date 2020/12/29
+ */
 public interface ResourceOperate {
     /**
      * 上传文件
