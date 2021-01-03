@@ -2,6 +2,7 @@ package com.bxbro.summer.test;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
+import java.util.Random;
 import java.util.concurrent.*;
 
 /**

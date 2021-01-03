@@ -30,14 +30,17 @@ public class ValidatorUtil {
      * 验证汉字(1-9个汉字)
      */
     public static final String REGEX_CHINESE = "^[\u4e00-\u9fa5]{1,9}$";
-
-    //todo 验证身份证
+    /**
+     * todo 验证身份证
+     */
     public static final String REGEX_ID_CARD = "";
     /**
      * 验证URL
      */
     public static final String REGEX_URL = "http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?";
-    // todo 验证IP地址
+    /**
+     * todo 验证IP地址
+     */
     public static final String REGEX_IP_ADDR = "";
 
     /**

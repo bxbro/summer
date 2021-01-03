@@ -18,15 +18,22 @@ import java.util.Scanner;
  */
 public class MpGenerator {
 
-    // 表前缀，不需要则写空
+    /**
+     * 表前缀，不需要则写空
+     */
     private static String tablePrefix="t_";
-
-    // 数据库用户名密码
+    /**
+     * 数据库用户名密码
+     */
     private static String username="root";
     private static String password="1234";
-    // 数据库驱动
+    /**
+     * 数据库驱动
+     */
     private static String driverName = "com.mysql.cj.jdbc.Driver";
-    // 数据库连接url
+    /**
+     * 数据库连接url
+     */
     private static String dbUrl="jdbc:mysql://localhost:3306/summer?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8";
 
 
@@ -67,13 +74,16 @@ public class MpGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-//        gc.setOutputDir(outPut + "java");
         gc.setOutputDir(projectPath + "/summer-web/src/main/java");
         gc.setFileOverride(true);
-        gc.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
-        gc.setEnableCache(false);// XML 二级缓存
-        gc.setBaseResultMap(true);// XML ResultMap
-        gc.setBaseColumnList(false);// XML columList
+        // 不需要ActiveRecord特性的请改为false
+        gc.setActiveRecord(true);
+        // XML 二级缓存
+        gc.setEnableCache(false);
+        // XML ResultMap
+        gc.setBaseResultMap(true);
+        // XML columList
+        gc.setBaseColumnList(false);
         gc.setAuthor("auto-generator");
 
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
@@ -106,8 +116,11 @@ public class MpGenerator {
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         // strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
-        strategy.setTablePrefix(new String[] {tablePrefix});// 此处可以修改为您的表前缀
-        strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
+
+        // 此处可以修改为您的表前缀
+        strategy.setTablePrefix(new String[] {tablePrefix});
+        // 表名生成策略
+        strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setEntityColumnConstant(true);
         strategy.setRestControllerStyle(true);

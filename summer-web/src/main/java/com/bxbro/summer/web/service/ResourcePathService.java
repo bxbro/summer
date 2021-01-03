@@ -7,11 +7,9 @@ package com.bxbro.summer.web.service;
  */
 public interface ResourcePathService {
     /**
-    * 根据不同的文件类型获取不同的存放路径
-    * @author dong
-    * @date 2020/11/25
-    * @param fileType
-    * @return 返回的是相对路径
-    */
+     * 根据不同的文件类型获取不同的存放路径
+     * @param fileType
+     * @return 返回的是相对路径
+     */
     String getResourcePath(Integer fileType);
 }

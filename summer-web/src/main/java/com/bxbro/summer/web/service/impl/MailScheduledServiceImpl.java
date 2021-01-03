@@ -19,7 +19,9 @@ public class MailScheduledServiceImpl {
 
     private static final Logger logger = LoggerFactory.getLogger(MailScheduledServiceImpl.class);
 
-    // todo 不知道为什么提示注入失败，但是能调得通
+    /**
+     * 不知道为什么提示注入失败，但是能调得通
+     */
     @Autowired
     JavaMailSenderImpl javaMailSender;
 

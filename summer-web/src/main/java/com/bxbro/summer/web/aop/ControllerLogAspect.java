@@ -36,25 +36,25 @@ public class ControllerLogAspect {
         logger.info("调用了前置通知");
     }
 
-    //@After: 后置通知
+
     @After("webRequest()")
     public void afterMethod(JoinPoint joinPoint){
         logger.info("调用了后置通知");
     }
 
-    //@AfterRunning: 返回通知 rsult为返回内容
+
     @AfterReturning(value="webRequest()",returning="result")
     public void afterReturningMethod(JoinPoint joinPoint,Object result){
         logger.info("调用了返回通知");
     }
 
-    //@AfterThrowing: 异常通知
+
     @AfterThrowing(value="webRequest()",throwing="e")
     public void afterReturningMethod(JoinPoint joinPoint, Exception e){
         logger.info("调用了异常通知");
     }
 
-    //@Around：环绕通知
+
     @Around("webRequest()")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
         threadLocal.set(System.currentTimeMillis());

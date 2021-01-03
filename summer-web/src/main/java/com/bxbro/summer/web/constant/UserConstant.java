@@ -12,10 +12,13 @@ public class UserConstant {
      */
     public enum Gender{
         WOMEN("女", 0), MAN("男", 1), UNKNOWN("未知", 2);
-
-        // 名称
+        /**
+         * 名称
+         */
         private String name;
-        // 编码
+        /**
+         * 编码
+         */
         private Integer code;
 
         Gender(String name, Integer code) {
@@ -46,9 +49,13 @@ public class UserConstant {
     public enum Online{
         OFFLINE("离线", 0), ONLINE("在线", 1);
 
-        // 名称
+        /**
+         * 名称
+         */
         private String name;
-        // 编码
+        /**
+         * 编码
+         */
         private Integer code;
 
         Online(String name, Integer code) {

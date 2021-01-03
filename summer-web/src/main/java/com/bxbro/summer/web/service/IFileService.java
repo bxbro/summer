@@ -16,12 +16,10 @@ import java.io.IOException;
  */
 public interface IFileService extends IService<File> {
     /**
-    * 上传文件及信息入库
-    * @author dong
-    * @date 2020/11/29
-    * @param file
-    * @param fileType
-    * @return void
-    */
+     * 上传文件及信息入库
+     * @param file
+     * @param fileType
+     * @throws IOException
+     */
     void uploadAndSave(MultipartFile file, Integer fileType) throws IOException;
 }

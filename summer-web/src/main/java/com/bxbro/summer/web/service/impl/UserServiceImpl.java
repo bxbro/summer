@@ -44,7 +44,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Autowired
     private IUserLockService userLockService;
 
-    // 登录失败重试次数
+    /**
+     * 登录失败重试次数
+     */
     private static final int RETRY_TIMES = 3;
 
 
