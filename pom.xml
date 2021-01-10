@@ -6,7 +6,7 @@
     <modules>
         <module>summer-common</module>
         <module>summer-web</module>
-        <module>summer-test</module>
+        <module>summer-study</module>
         <module>summer-fileservice</module>
     </modules>
     <parent>
@@ -101,10 +101,43 @@
                 <version>${druid.version}</version>
             </dependency>
 
+            <!--常用的日期工具类-->
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>${joda.time.version}</version>
+            </dependency>
+
+            <!--start: mybatis plus generator依赖的包-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity-engine-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+            </dependency>
+            <!--end: mybatis plus generator依赖的包-->
+
+            <!--mybatis plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus-extension.version}</version>
             </dependency>
 
         </dependencies>

@@ -1,4 +1,4 @@
-package com.bxbro.summer.test.lambda;
+package com.bxbro.summer.study.lambda;
 
 import java.util.ArrayList;
 import java.util.List;

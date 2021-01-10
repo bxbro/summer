@@ -1,13 +1,13 @@
-package com.bxbro.summer.test.lambda;
+package com.bxbro.summer.study.lambda;
 
 /**
  * @Description TODO
  * @Author dong
  * @Date 2020/12/5
  */
-public class ScoreFilter implements StudentFilter {
+public class AgeFilter implements StudentFilter {
     @Override
     public boolean compare(Student student) {
-        return student.getScore() > 80;
+        return student.getAge() > 18;
     }
 }

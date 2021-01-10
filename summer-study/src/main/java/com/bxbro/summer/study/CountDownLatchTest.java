@@ -1,8 +1,7 @@
-package com.bxbro.summer.test;
+package com.bxbro.summer.study;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
-import java.util.Random;
 import java.util.concurrent.*;
 
 /**
