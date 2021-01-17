@@ -1,4 +1,4 @@
-package com.bxbro.summer.study;
+package com.bxbro.summer.study.lambda;
 
 import java.util.Arrays;
 import java.util.Collections;

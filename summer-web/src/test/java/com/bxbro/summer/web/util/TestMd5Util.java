@@ -7,7 +7,7 @@ import org.springframework.util.DigestUtils;
  * @Author dong
  * @Date 2020/12/6
  */
-public class Md5UtilTest {
+public class TestMd5Util {
 
     public static void main(String[] args) {
         String password = "12345";

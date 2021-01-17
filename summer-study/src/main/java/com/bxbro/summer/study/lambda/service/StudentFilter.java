@@ -1,4 +1,6 @@
-package com.bxbro.summer.study.lambda;
+package com.bxbro.summer.study.lambda.service;
+
+import com.bxbro.summer.study.lambda.model.Student;
 
 /**
  * Student过滤器

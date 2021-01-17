@@ -1,4 +1,4 @@
-package com.bxbro.summer.study.lambda;
+package com.bxbro.summer.study.lambda.model;
 
 /**
  * @Description TODO

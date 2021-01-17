@@ -39,6 +39,7 @@
         <hutool.version>4.1.1</hutool.version>
         <fastjson.version>1.2.47</fastjson.version>
         <joda.time.version>2.9.9</joda.time.version>
+        <mysql-connector-java-version>8.0.15</mysql-connector-java-version>
     </properties>
 
     <dependencyManagement>
@@ -138,6 +139,14 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-extension</artifactId>
                 <version>${mybatis-plus-extension.version}</version>
+            </dependency>
+
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql-connector-java-version}</version>
             </dependency>
 
         </dependencies>

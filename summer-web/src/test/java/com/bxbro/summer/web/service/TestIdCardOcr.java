@@ -24,7 +24,7 @@ import java.util.Map;
  */
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
-public class IdCardOcrTest {
+public class TestIdCardOcr {
 
     /**
      * 身份证识别接口url: http(s)://dm-51.data.aliyun.com/rest/160601/ocr/ocr_idcard.json
