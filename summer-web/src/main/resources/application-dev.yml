@@ -19,8 +19,6 @@ spring:
     password: qxkusgfdmsltcdbg
     default-encoding: utf-8
     host: smtp.qq.com
-swagger:
-  enable: true
 summer:
   resources:
     root-dir: D:/summer/resource_root
