@@ -1,7 +1,6 @@
 package com.bxbro.summer.study.methodproxy.service.impl;
 
 import com.bxbro.summer.study.methodproxy.service.IHelloService;
-import com.bxbro.summer.web.service.IHelloService;
 
 /**
  * @author dong
