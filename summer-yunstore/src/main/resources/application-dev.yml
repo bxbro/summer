@@ -1,0 +1,10 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /summer
+
+summer:
+  tablestore:
+    endpoint:
+    accesskey:
+    accessId:

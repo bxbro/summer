@@ -8,6 +8,7 @@
         <module>summer-web</module>
         <module>summer-study</module>
         <module>summer-fileservice</module>
+        <module>summer-yunstore</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
