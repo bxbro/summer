@@ -16,6 +16,12 @@ public class MaxSubseqSum {
         System.out.println("最大子列和为："+maxSum);
     }
 
+    /**
+     * 算法1
+     * 时间复杂度：N三次方
+     * @param array
+     * @return
+     */
     public static int maxSubseqSum1(int[] array) {
         int thisSum;
         int maxSum = 0;
@@ -36,6 +42,12 @@ public class MaxSubseqSum {
         return maxSum;
     }
 
+    /**
+     * 算法2
+     * 时间复杂度：N的平方
+     * @param array
+     * @return
+     */
     public static int maxSubseqSum2(int[] array) {
         int thisSum;
         int maxSum = 0;
@@ -51,6 +63,12 @@ public class MaxSubseqSum {
         return maxSum;
     }
 
+    /**
+     * 算法三：分而治之
+     * 时间复杂度：NlogN
+     * @param array
+     * @return
+     */
     public static int maxSubseqSum3(int[] array) {
         return DivideAndConquer( array, 0, array.length-1 );
     }
