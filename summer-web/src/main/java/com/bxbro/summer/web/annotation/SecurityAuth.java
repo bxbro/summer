@@ -14,8 +14,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SecurityAuth {
     /**
-     * 拥有权限的角色名
+     * 拥有权限的角色编码
      * @return
      */
-    String roleName();
+    String roleCodes();
 }

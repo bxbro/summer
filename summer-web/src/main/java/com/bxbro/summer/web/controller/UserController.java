@@ -10,6 +10,7 @@ import com.bxbro.summer.web.annotation.SecurityAuth;
 import com.bxbro.summer.web.param.UserParam;
 import com.bxbro.summer.web.service.IUserService;
 import com.bxbro.summer.web.vo.UserVO;
+import com.google.common.base.Supplier;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -63,7 +64,7 @@ public class UserController {
 
     @ApiOperation(value = "分页查询用户列表")
     @GetMapping
-    @SecurityAuth(roleName = "admin")
+    @SecurityAuth(roleCodes = "001,002,003")
     public BaseResponse<List<UserVO>> listUsers(@ApiParam(value = "页码") @RequestParam("pageNo") int pageNo,
                                                   @ApiParam(value = "每页显示条数") @RequestParam("pageSize") int pageSize) {
         List<UserVO> userVOList = userService.listUsers(pageNo, pageSize);

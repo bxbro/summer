@@ -6,22 +6,16 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
-import java.util.Collection;
 
 /**
  * @author dong
- * @description TODO
+ * @description 权限校验 切面类
  * @date 2021/4/9
  */
 @Aspect
@@ -39,22 +33,15 @@ public class SecurityAspect {
         HttpServletResponse response =
                 ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
         // 拿到当前登录的用户
-        UsernamePasswordAuthenticationToken authenticationToken =
-                (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
-        //details里面可能存放了当前登录用户的详细信息，也可以通过cast后拿到
-//        User user = (User) authenticationToken.getDetails();
-        Object details = authenticationToken.getDetails();
-        System.out.println(details.toString());
-        String sessionId = ((WebAuthenticationDetails) details).getSessionId();
-//        if (user == null) {
-//            // fixme
-//        }
+        // fixme 如果在登录的时候有通过ThreadLocal来存用户的信息，则可以从ThreadLocal里获取当前登录的用户
+
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         SecurityAuth auth = method.getAnnotation(SecurityAuth.class);
-        String roleName = auth.roleName();
+        String roleCodes = auth.roleCodes();
 
-//        Collection<GrantedAuthority> authorities = user.getAuthorities();
+        // fixme 判断当前登录的用户的角色，是否在roleCodes中
+
 
         return joinPoint.proceed();
     }
