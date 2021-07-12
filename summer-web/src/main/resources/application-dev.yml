@@ -19,6 +19,10 @@ spring:
     password: qxkusgfdmsltcdbg
     default-encoding: utf-8
     host: smtp.qq.com
+  redis:
+    host: localhost
+    password:
+    port: 6379
 summer:
   resources:
     root-dir: D:/summer/resource_root

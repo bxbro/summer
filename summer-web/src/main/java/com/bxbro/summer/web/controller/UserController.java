@@ -16,6 +16,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,6 +36,8 @@ public class UserController {
 
     @Autowired
     private IUserService userService;
+    @Autowired
+    private RedisTemplate<Object, Object> redisTemplate;
 
     @ApiOperation(value = "新增用户")
     @PostMapping
@@ -91,6 +94,16 @@ public class UserController {
         }
     }
 
+    @ApiOperation("获取单个用户")
+    @GetMapping("/{id}")
+    public BaseResponse getUserById(@PathVariable("id") Long id) {
+        User user = (User)redisTemplate.opsForValue().get("userkey");
+        if (user == null) {
+            user = userService.getById(id);
+            redisTemplate.opsForValue().set("userkey", user);
+        }
+        return BaseResponse.success(user);
+    }
 
 }
 
