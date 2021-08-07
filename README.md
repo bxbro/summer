@@ -1,8 +1,12 @@
 # summer
 summer is coming
 
-## 项目框架SpringBoot + Mybatis-plus + Mysql
+## 项目简介
+### 1.数据源 mysql
+### 2.持久层框架 mybatis-plus
+### 3.应用层框架 springboot
+#### {spring-boot-starter-actuator健康检查}访问地址： 
+http://localhost:8081/summer/actuator
 
-#### 目前问题：
-##### 1.打包失败（已修复）
-
+### 4.接口文档管理 swagger
+### 5.缓存中间件 redis
