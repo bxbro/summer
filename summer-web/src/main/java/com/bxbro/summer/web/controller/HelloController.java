@@ -16,10 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/test")
 public class HelloController {
 
+
+
     @ApiOperation(value = "跟夏天打个招呼")
     @GetMapping("/summer")
     public String sayHello() {
         return "Hello Miss Summer~";
     }
+
 
 }

@@ -1,6 +1,8 @@
 spring:
   profiles:
     active: dev
+  application:
+    name: summer-web
 management:
   endpoints:
     web:
@@ -8,3 +10,7 @@ management:
         # 暴露除env外的所有端点 （仅为学习用，实际生产中不建议这么做，需配合spring-security使用）
         include: '*'
         exclude: env
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:9527/eureka/,http://peer2:9528/eureka/
