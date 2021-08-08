@@ -26,7 +26,7 @@ public class TestController {
     @ApiOperation(value = "跟夏天打个招呼")
     @GetMapping("/summer")
     public String sayHello() {
-        return "Hello Miss Summer~";
+        return "Hello Summer~";
     }
 
 
