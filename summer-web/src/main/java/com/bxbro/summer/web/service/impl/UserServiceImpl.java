@@ -1,22 +1,21 @@
 package com.bxbro.summer.web.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bxbro.summer.common.constant.ResourceStatus;
-import com.bxbro.summer.common.entity.User;
-import com.bxbro.summer.common.entity.UserLock;
+import com.bxbro.summer.common.domain.entity.User;
+import com.bxbro.summer.common.domain.entity.UserLock;
 import com.bxbro.summer.common.resp.BaseResponse;
 import com.bxbro.summer.common.util.DateUtils;
-import com.bxbro.summer.web.constant.UserConstant;
+import com.bxbro.summer.web.common.constant.UserConstant;
 import com.bxbro.summer.web.mapper.UserMapper;
-import com.bxbro.summer.web.param.UserParam;
+import com.bxbro.summer.common.domain.param.UserParam;
 import com.bxbro.summer.web.service.IUserLockService;
 import com.bxbro.summer.web.service.IUserService;
-import com.bxbro.summer.web.vo.UserVO;
+import com.bxbro.summer.common.domain.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;

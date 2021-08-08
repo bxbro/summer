@@ -1,4 +1,4 @@
-package com.bxbro.summer.web.annotation;
+package com.bxbro.summer.web.common.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

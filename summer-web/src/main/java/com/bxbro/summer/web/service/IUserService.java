@@ -1,10 +1,10 @@
 package com.bxbro.summer.web.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.bxbro.summer.common.entity.User;
+import com.bxbro.summer.common.domain.entity.User;
 import com.bxbro.summer.common.resp.BaseResponse;
-import com.bxbro.summer.web.param.UserParam;
-import com.bxbro.summer.web.vo.UserVO;
+import com.bxbro.summer.common.domain.param.UserParam;
+import com.bxbro.summer.common.domain.vo.UserVO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

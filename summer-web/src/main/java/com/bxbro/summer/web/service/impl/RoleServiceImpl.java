@@ -1,6 +1,6 @@
 package com.bxbro.summer.web.service.impl;
 
-import com.bxbro.summer.common.entity.Role;
+import com.bxbro.summer.common.domain.entity.Role;
 import com.bxbro.summer.web.mapper.RoleMapper;
 import com.bxbro.summer.web.service.IRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

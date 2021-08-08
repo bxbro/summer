@@ -1,4 +1,4 @@
-package com.bxbro.summer.web.constant;
+package com.bxbro.summer.web.common.constant;
 
 /**
  * @Description 用户常量类

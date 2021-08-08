@@ -1,6 +1,6 @@
 package com.bxbro.summer.web.mapper;
 
-import com.bxbro.summer.common.entity.UserRole;
+import com.bxbro.summer.common.domain.entity.UserRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 

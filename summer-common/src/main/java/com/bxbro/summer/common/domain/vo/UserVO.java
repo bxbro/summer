@@ -1,11 +1,12 @@
-package com.bxbro.summer.web.dto;
+package com.bxbro.summer.common.domain.vo;
 
 /**
  * @Description TODO
  * @Author dong
- * @Date 2020/12/5
+ * @Date 2020/12/6
  */
-public class UserDTO {
+public class UserVO {
+
     /**
      * 主键id
      */
@@ -17,9 +18,9 @@ public class UserDTO {
     private String userName;
 
     /**
-     * 性别
+     * {@link com.bxbro.summer.web.common.constant.UserConstant.Gender}
      */
-    private Integer gender;
+    private String genderStr;
 
     /**
      * 年龄
@@ -52,7 +53,7 @@ public class UserDTO {
     private Long mtime;
 
     /**
-     * 是否删除标志位 (0 未删除, 1 已删除)
+     * {@link com.bxbro.summer.common.constant.ResourceStatus}
      */
     private Integer deleted;
 
@@ -72,12 +73,12 @@ public class UserDTO {
         this.userName = userName;
     }
 
-    public Integer getGender() {
-        return gender;
+    public String getGenderStr() {
+        return genderStr;
     }
 
-    public void setGender(Integer gender) {
-        this.gender = gender;
+    public void setGenderStr(String genderStr) {
+        this.genderStr = genderStr;
     }
 
     public Integer getAge() {
@@ -138,10 +139,10 @@ public class UserDTO {
 
     @Override
     public String toString() {
-        return "UserDTO{" +
+        return "UserVO{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
-                ", gender=" + gender +
+                ", genderStr='" + genderStr + '\'' +
                 ", age=" + age +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +

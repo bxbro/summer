@@ -3,7 +3,7 @@
 <mapper namespace="com.bxbro.summer.web.mapper.UserLockMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.bxbro.summer.common.entity.UserLock">
+    <resultMap id="BaseResultMap" type="com.bxbro.summer.common.domain.entity.UserLock">
         <id column="id" property="id" />
         <result column="user_name" property="userName" />
         <result column="user_id" property="userId" />

@@ -1,4 +1,4 @@
-package com.bxbro.summer.web.aop;
+package com.bxbro.summer.web.common.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;

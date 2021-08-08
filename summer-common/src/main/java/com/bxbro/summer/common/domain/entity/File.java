@@ -1,4 +1,4 @@
-package com.bxbro.summer.common.entity;
+package com.bxbro.summer.common.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;

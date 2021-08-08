@@ -1,6 +1,6 @@
 package com.bxbro.summer.web.service;
 
-import com.bxbro.summer.common.entity.UserLock;
+import com.bxbro.summer.common.domain.entity.UserLock;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

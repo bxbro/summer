@@ -2,7 +2,7 @@ package com.bxbro.summer.web.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.bxbro.summer.common.entity.UserLock;
+import com.bxbro.summer.common.domain.entity.UserLock;
 import com.bxbro.summer.web.mapper.UserLockMapper;
 import com.bxbro.summer.web.service.IUserLockService;
 import org.springframework.beans.factory.annotation.Autowired;

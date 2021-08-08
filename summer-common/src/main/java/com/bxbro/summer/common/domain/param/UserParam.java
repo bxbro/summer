@@ -1,4 +1,4 @@
-package com.bxbro.summer.web.param;
+package com.bxbro.summer.common.domain.param;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

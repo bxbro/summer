@@ -3,7 +3,7 @@
 <mapper namespace="com.bxbro.summer.web.mapper.RoleMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.bxbro.summer.common.entity.Role">
+    <resultMap id="BaseResultMap" type="com.bxbro.summer.common.domain.entity.Role">
         <id column="id" property="id" />
         <result column="role_name" property="roleName" />
         <result column="role_type" property="roleType" />

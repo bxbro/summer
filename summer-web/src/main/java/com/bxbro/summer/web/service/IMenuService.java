@@ -1,6 +1,6 @@
 package com.bxbro.summer.web.service;
 
-import com.bxbro.summer.common.entity.Menu;
+import com.bxbro.summer.common.domain.entity.Menu;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

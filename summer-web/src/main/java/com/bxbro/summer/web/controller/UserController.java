@@ -3,14 +3,13 @@ package com.bxbro.summer.web.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.bxbro.summer.common.constant.ResourceStatus;
-import com.bxbro.summer.common.entity.User;
+import com.bxbro.summer.common.domain.entity.User;
 import com.bxbro.summer.common.resp.BaseResponse;
 import com.bxbro.summer.common.resp.StatusCode;
-import com.bxbro.summer.web.annotation.SecurityAuth;
-import com.bxbro.summer.web.param.UserParam;
+import com.bxbro.summer.web.common.annotation.SecurityAuth;
+import com.bxbro.summer.common.domain.param.UserParam;
 import com.bxbro.summer.web.service.IUserService;
-import com.bxbro.summer.web.vo.UserVO;
-import com.google.common.base.Supplier;
+import com.bxbro.summer.common.domain.vo.UserVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

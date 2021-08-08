@@ -3,7 +3,7 @@
 <mapper namespace="com.bxbro.summer.web.mapper.MenuMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.bxbro.summer.common.entity.Menu">
+    <resultMap id="BaseResultMap" type="com.bxbro.summer.common.domain.entity.Menu">
         <id column="id" property="id" />
         <result column="menu_name" property="menuName" />
         <result column="menu_url" property="menuUrl" />

@@ -1,6 +1,6 @@
-package com.bxbro.summer.web.aop;
+package com.bxbro.summer.web.common.aop;
 
-import com.bxbro.summer.web.annotation.SecurityAuth;
+import com.bxbro.summer.web.common.annotation.SecurityAuth;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -22,7 +22,7 @@ import java.lang.reflect.Method;
 @Component
 public class SecurityAspect {
 
-    @Pointcut("@annotation(com.bxbro.summer.web.annotation.SecurityAuth)")
+    @Pointcut("@annotation(com.bxbro.summer.web.common.annotation.SecurityAuth)")
     public void annotationAspect() {
 
     }

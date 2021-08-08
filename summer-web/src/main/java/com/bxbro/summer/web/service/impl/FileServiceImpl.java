@@ -2,7 +2,7 @@ package com.bxbro.summer.web.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.bxbro.summer.common.constant.ResourceStatus;
-import com.bxbro.summer.common.entity.File;
+import com.bxbro.summer.common.domain.entity.File;
 import com.bxbro.summer.fileservice.api.ResourceOperate;
 import com.bxbro.summer.web.mapper.FileMapper;
 import com.bxbro.summer.web.service.IFileService;

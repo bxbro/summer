@@ -1,4 +1,4 @@
-package com.bxbro.summer.common.util;
+package com.bxbro.summer.web.common.utils;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;

@@ -1,7 +1,7 @@
 package com.bxbro.summer.web.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.bxbro.summer.common.entity.File;
+import com.bxbro.summer.common.domain.entity.File;
 import org.springframework.stereotype.Repository;
 
 /**

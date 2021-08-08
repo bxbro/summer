@@ -1,6 +1,6 @@
 package com.bxbro.summer.web.service;
 
-import com.bxbro.summer.common.entity.File;
+import com.bxbro.summer.common.domain.entity.File;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.web.multipart.MultipartFile;
 
