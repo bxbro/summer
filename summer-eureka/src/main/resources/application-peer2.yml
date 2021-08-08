@@ -1,0 +1,13 @@
+server:
+  port: 9528
+eureka:
+  instance:
+    hostname: peer2
+  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://peer1:9527/eureka/
+spring:
+  application:
+    name: summer-eureka-server
