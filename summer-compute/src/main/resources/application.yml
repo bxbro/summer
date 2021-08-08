@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: summer-compute
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:9527/eureka/,http://peer2:9528/eureka/
