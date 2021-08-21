@@ -1,13 +1,13 @@
 server:
-  port: 9528
+  port: 9529
 eureka:
   instance:
-    hostname: peer2
+    hostname: peer3
   client:
 #    register-with-eureka: false
 #    fetch-registry: false
     serviceUrl:
-      defaultZone: http://peer1:9527/eureka/,http://peer3:9529/eureka/
+      defaultZone: http://peer1:9527/eureka/,http://peer2:9528/eureka/
 spring:
   application:
     name: summer-eureka-server
