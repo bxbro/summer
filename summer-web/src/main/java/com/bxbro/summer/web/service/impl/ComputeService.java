@@ -1,6 +1,5 @@
 package com.bxbro.summer.web.service.impl;
 
-import com.bxbro.summer.common.resp.BaseResponse;
 import com.bxbro.summer.common.resp.StatusCode;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;

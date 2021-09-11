@@ -20,11 +20,8 @@ import org.springframework.web.client.RestTemplate;
  * @since 2021/1/3
  * @version 1.0.0
  */
-//@SpringBootApplication
 @MapperScan("com.bxbro.summer.web.mapper")
 @EnableScheduling
-//@EnableDiscoveryClient
-//@EnableCircuitBreaker
 @SpringCloudApplication
 public class WebApplication {
 
