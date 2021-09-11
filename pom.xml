@@ -7,7 +7,6 @@
         <module>summer-common</module>
         <module>summer-web</module>
         <module>summer-fileservice</module>
-        <module>summer-yunstore</module>
         <module>summer-eureka</module>
         <module>summer-compute</module>
     </modules>
