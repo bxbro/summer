@@ -3,6 +3,8 @@ package com.bxbro.summer.web;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -18,11 +20,12 @@ import org.springframework.web.client.RestTemplate;
  * @since 2021/1/3
  * @version 1.0.0
  */
-@SpringBootApplication
+//@SpringBootApplication
 @MapperScan("com.bxbro.summer.web.mapper")
 @EnableScheduling
-//@EnableEurekaClient
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
+//@EnableCircuitBreaker
+@SpringCloudApplication
 public class WebApplication {
 
     public static void main(String[] args) {
