@@ -9,6 +9,7 @@
         <module>summer-fileservice</module>
         <module>summer-eureka</module>
         <module>summer-compute</module>
+        <module>summer-order</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

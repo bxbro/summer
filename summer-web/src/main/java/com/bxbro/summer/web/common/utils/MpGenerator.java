@@ -26,7 +26,7 @@ public class MpGenerator {
      * 数据库用户名密码
      */
     private static String username="root";
-    private static String password="1234";
+    private static String password="bxxd12345+";
     /**
      * 数据库驱动
      */
