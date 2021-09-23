@@ -32,7 +32,7 @@ public class OrderController {
         return BaseResponse.success(order);
     }
 
-    @GetMapping("/ids")
+    @GetMapping
     public BaseResponse getOrdersByIds(@RequestParam("ids") String ids) {
         Asserts.notNull(ids, "ids不能为空.");
         String[] idArray = ids.split(",");

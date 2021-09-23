@@ -30,9 +30,10 @@ public class OrderService {
         return null;
     }
 
+
     @HystrixCommand
     public BaseResponse getOrders(List<Integer> ids) {
-        return restTemplate.getForObject("http://SUMMER-ORDER/order?ids={1}", BaseResponse.class,
-                StringUtils.join(ids, ","));
+        return restTemplate.getForObject(
+                "http://SUMMER-ORDER/order?ids={1}", BaseResponse.class, StringUtils.join(ids, ","));
     }
 }

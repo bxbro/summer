@@ -18,6 +18,12 @@ public class ComputeService {
     RestTemplate restTemplate;
 
 
+    /**
+     * 服务降级
+     * @param a
+     * @param b
+     * @return
+     */
     @HystrixCommand(fallbackMethod = "computeFallback")
     public Integer simpleCompute(Integer a, Integer b) {
         StringBuilder serviceUrl = new StringBuilder();
