@@ -1,7 +1,7 @@
 package com.bxbro.summer.web.controller;
 
-import com.bxbro.summer.common.domain.entity.User;
 import com.bxbro.summer.common.resp.BaseResponse;
+import com.bxbro.summer.web.service.feign.OrderClient;
 import com.bxbro.summer.web.service.impl.ComputeService;
 import com.bxbro.summer.web.service.impl.OrderService;
 import io.swagger.annotations.Api;
@@ -9,7 +9,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -33,9 +32,11 @@ public class TestController {
     ComputeService computeService;
     @Autowired
     OrderService orderService;
+    @Autowired
+    OrderClient orderClient;
 
 
-    @ApiOperation(value = "跟夏天打个招呼")
+    @ApiOperation(value = "获取服务注册中心实例")
     @GetMapping("/summer")
     public String sayHello() {
         List<String> services = discoveryClient.getServices();
@@ -68,6 +69,13 @@ public class TestController {
     @GetMapping("/orders/{id}")
     public BaseResponse getOrderList(@PathVariable("id") Integer id) {
         return orderService.getOrder(id);
+    }
+
+
+    @ApiOperation("feign调用summer-order服务的获取订单接口")
+    @GetMapping("/order/{id}")
+    public BaseResponse getOrderById(@PathVariable("id") Integer id) {
+        return orderClient.getOrderById(id);
     }
 
 }
