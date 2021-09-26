@@ -1,6 +1,6 @@
 package com.bxbro.summer.web.service.impl;
 
-import com.bxbro.summer.common.resp.StatusCode;
+import com.bxbro.summer.common.constant.SystemEnum;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +36,6 @@ public class ComputeService {
 
     public Integer computeFallback(Integer a, Integer b) {
         System.out.println("-----------------进入断路器回调方法-----------------");
-        return StatusCode.FAIL;
+        return SystemEnum.FAIL.getCode();
     }
 }

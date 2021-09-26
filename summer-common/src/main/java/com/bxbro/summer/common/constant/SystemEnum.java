@@ -14,7 +14,8 @@ public enum SystemEnum {
 
     SUCCESS(0, "操作成功"),
     FAIL(-1, "操作失败"),
-    PARAM_VALIDATE_ERROR(1000, "参数校验失败.");
+    PARAM_VALIDATE_ERROR(1000, "参数校验失败"),
+    SERVICE_INVOCATION_ERROR(2000, "服务间调用失败");
 
     private Integer code;
     private String desc;

@@ -14,3 +14,18 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://peer1:9527/eureka/,http://peer2:9528/eureka/,http://peer3:9529/eureka/
+
+summer-order:
+  ribbon:
+    ConnectTimeout: 500
+    ReadTimeout: 2000
+    OkToRetryOnAllOperations: true
+    # 尝试更换两次实例进行重试
+    MaxAutoRetriesNextServer: 2
+    # 尝试访问首选实例一次
+    MaxAutoRetries: 1
+
+# 开启feign hystrix 服务降级
+feign:
+  hystrix:
+    enabled: true
