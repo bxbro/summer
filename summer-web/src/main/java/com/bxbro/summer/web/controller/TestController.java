@@ -1,6 +1,8 @@
 package com.bxbro.summer.web.controller;
 
+import com.bxbro.summer.common.exception.SummerException;
 import com.bxbro.summer.common.resp.BaseResponse;
+import com.bxbro.summer.common.resp.SystemEnum;
 import com.bxbro.summer.web.service.feign.OrderClient;
 import com.bxbro.summer.web.service.impl.ComputeService;
 import com.bxbro.summer.web.service.impl.OrderService;
@@ -48,8 +50,7 @@ public class TestController {
 
     @ApiOperation("ribbon调用summer-compute服务的计算接口")
     @GetMapping("/compute")
-    public Integer getComputeResult(@RequestParam("a")Integer a,
-                                    @RequestParam("b")Integer b) {
+    public Integer getComputeResult(@RequestParam("a")Integer a, @RequestParam("b")Integer b) {
         StringBuilder serviceUrl = new StringBuilder();
         serviceUrl.append("http://summer-compute/compute?");
         serviceUrl.append("a=").append(a);
@@ -68,6 +69,9 @@ public class TestController {
     @ApiOperation("ribbon调用summer-order服务的获取订单接口，增加Hystrix的请求合并器")
     @GetMapping("/orders/{id}")
     public BaseResponse getOrderList(@PathVariable("id") Integer id) {
+        if (id == null) {
+            throw new SummerException(SystemEnum.PARAM_VALIDATE_ERROR.getCode(), SystemEnum.PARAM_VALIDATE_ERROR.getDesc());
+        }
         return orderService.getOrder(id);
     }
 

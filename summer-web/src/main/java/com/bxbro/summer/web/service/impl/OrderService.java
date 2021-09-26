@@ -27,10 +27,16 @@ public class OrderService {
             @HystrixProperty(name = "timerDelayInMilliseconds", value = "100")
     })
     public BaseResponse getOrder(Integer id) {
+        // 你会发现根本不会进入这个方法
         return null;
     }
 
 
+    /**
+     * 真正执行的方法
+     * @param ids
+     * @return
+     */
     @HystrixCommand
     public BaseResponse getOrders(List<Integer> ids) {
         return restTemplate.getForObject(
