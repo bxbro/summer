@@ -95,12 +95,6 @@
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
 
-        <!--aop-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>

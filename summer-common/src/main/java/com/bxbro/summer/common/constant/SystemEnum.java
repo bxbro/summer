@@ -1,4 +1,4 @@
-package com.bxbro.summer.common.resp;
+package com.bxbro.summer.common.constant;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

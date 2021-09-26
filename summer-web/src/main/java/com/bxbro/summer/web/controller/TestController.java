@@ -2,7 +2,7 @@ package com.bxbro.summer.web.controller;
 
 import com.bxbro.summer.common.exception.SummerException;
 import com.bxbro.summer.common.resp.BaseResponse;
-import com.bxbro.summer.common.resp.SystemEnum;
+import com.bxbro.summer.common.constant.SystemEnum;
 import com.bxbro.summer.web.service.feign.OrderClient;
 import com.bxbro.summer.web.service.impl.ComputeService;
 import com.bxbro.summer.web.service.impl.OrderService;

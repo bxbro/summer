@@ -1,5 +1,7 @@
 package com.bxbro.summer.common.resp;
 
+import com.bxbro.summer.common.constant.SystemEnum;
+
 import java.io.Serializable;
 
 /**
@@ -9,17 +11,17 @@ import java.io.Serializable;
  */
 public class BaseResponse<T> implements Serializable {
 
-    private int code = StatusCode.SUCCESS;
+    private int code = SystemEnum.SUCCESS.getCode();
 
-    private String msg = StatusMsg.SUCCESS;
+    private String msg = SystemEnum.SUCCESS.getDesc();
 
     private T data;
 
     public BaseResponse(){}
 
     public BaseResponse(T data) {
-        this.code = StatusCode.SUCCESS;
-        this.msg = StatusMsg.SUCCESS;
+        this.code = SystemEnum.SUCCESS.getCode();
+        this.msg = SystemEnum.SUCCESS.getDesc();
         this.data = data;
     }
 
@@ -30,7 +32,7 @@ public class BaseResponse<T> implements Serializable {
     }
 
     public static <R> BaseResponse<R> success(){
-        return new BaseResponse<>();
+        return new BaseResponse<>(SystemEnum.SUCCESS.getCode(), SystemEnum.SUCCESS.getDesc(), null);
     }
 
     public static <R> BaseResponse<R> success(R data) {
@@ -38,11 +40,15 @@ public class BaseResponse<T> implements Serializable {
     }
 
     public static BaseResponse<String> successMsg(String msg) {
-        return new BaseResponse<>(StatusCode.SUCCESS, msg, null);
+        return new BaseResponse<>(SystemEnum.SUCCESS.getCode(), msg, null);
+    }
+
+    public static <R> BaseResponse<R> fail(){
+        return new BaseResponse<>(SystemEnum.FAIL.getCode(), SystemEnum.FAIL.getDesc(), null);
     }
 
     public static BaseResponse fail(String msg) {
-        return new BaseResponse<>(StatusCode.FAIL, msg, null);
+        return new BaseResponse<>(SystemEnum.FAIL.getCode(), msg, null);
     }
 
     public static BaseResponse fail(int statusCode, String msg) {

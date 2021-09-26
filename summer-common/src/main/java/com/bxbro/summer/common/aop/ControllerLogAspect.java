@@ -1,8 +1,8 @@
-package com.bxbro.summer.web.common.aop;
+package com.bxbro.summer.common.aop;
 
 import com.bxbro.summer.common.exception.SummerException;
 import com.bxbro.summer.common.resp.BaseResponse;
-import com.bxbro.summer.common.resp.SystemEnum;
+import com.bxbro.summer.common.constant.SystemEnum;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -24,8 +24,6 @@ public class ControllerLogAspect {
 
     private static final Logger logger
             = LoggerFactory.getLogger(ControllerLogAspect.class);
-
-    private static ThreadLocal<Long> threadLocal = new ThreadLocal<>();
 
     @Pointcut("execution(* com.bxbro.summer.web.controller..*.*(..))")
     public void webRequest() {

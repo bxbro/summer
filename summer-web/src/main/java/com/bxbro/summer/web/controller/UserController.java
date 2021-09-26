@@ -4,12 +4,11 @@ package com.bxbro.summer.web.controller;
 import cn.hutool.core.bean.BeanUtil;
 import com.bxbro.summer.common.constant.ResourceStatus;
 import com.bxbro.summer.common.domain.entity.User;
-import com.bxbro.summer.common.resp.BaseResponse;
-import com.bxbro.summer.common.resp.StatusCode;
-import com.bxbro.summer.web.common.annotation.SecurityAuth;
 import com.bxbro.summer.common.domain.param.UserParam;
-import com.bxbro.summer.web.service.IUserService;
 import com.bxbro.summer.common.domain.vo.UserVO;
+import com.bxbro.summer.common.resp.BaseResponse;
+import com.bxbro.summer.web.common.annotation.SecurityAuth;
+import com.bxbro.summer.web.service.IUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -45,7 +44,7 @@ public class UserController {
             return BaseResponse.fail("用户名或密码为空");
         }
         userService.saveUser(userParam);
-        return BaseResponse.success(StatusCode.SUCCESS);
+        return BaseResponse.success();
     }
 
     @ApiOperation(value = "编辑用户")
@@ -61,7 +60,7 @@ public class UserController {
         } else {
             return BaseResponse.fail("该id对应的用户不存在！");
         }
-        return BaseResponse.success(StatusCode.SUCCESS);
+        return BaseResponse.success();
     }
 
     @ApiOperation(value = "分页查询用户列表")
@@ -87,9 +86,9 @@ public class UserController {
         user.setDeleted(ResourceStatus.DELETED);
         boolean result = userService.updateById(user);
         if (result) {
-            return BaseResponse.success(StatusCode.SUCCESS);
+            return BaseResponse.success();
         } else {
-            return BaseResponse.success(StatusCode.FAIL);
+            return BaseResponse.fail();
         }
     }
 

@@ -1,7 +1,7 @@
 package com.bxbro.summer.common.util;
 
 import com.bxbro.summer.common.exception.SummerException;
-import com.bxbro.summer.common.resp.SystemEnum;
+import com.bxbro.summer.common.constant.SystemEnum;
 
 /**
  * @author dong
