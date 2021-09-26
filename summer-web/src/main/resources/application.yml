@@ -29,3 +29,16 @@ summer-order:
 feign:
   hystrix:
     enabled: true
+
+# 使用logging.level.<FeignClient>的参数配置格式来开启指定Feign客户端的DEBUG日志
+# 其中 <FeignClient>为Feign客户端定义接口的完整路径
+logging:
+  level:
+    com:
+      bxbro:
+        summer:
+          web:
+            service:
+              feign:
+                OrderClient: DEBUG
+
