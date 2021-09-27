@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: summer-gateway
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:9527/eureka/,http://peer2:9528/eureka/,http://peer3:9529/eureka/
+
+# 配置服务路由
+zuul:
+  routes:
+    api-web:
+      path: /api-web/**
+      serviceId: summer-web
+    api-order:
+      path: /api-order/**
+      serviceId: summer-order
+    api-compute:
+      path: /api-compute/**
+      serviceId: summer-compute
