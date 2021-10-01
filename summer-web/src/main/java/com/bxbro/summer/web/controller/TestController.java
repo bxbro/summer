@@ -23,7 +23,7 @@ import java.util.List;
  */
 @Api(value = "HelloTest", tags = "Hello测试")
 @RestController
-@RequestMapping("/api/v1/test")
+@RequestMapping("/test")
 public class TestController {
 
     @Autowired

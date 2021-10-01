@@ -3,20 +3,28 @@ spring:
     active: dev
   application:
     name: summer-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: route-web
+        uri: lb://summer-web
+        predicates:
+        - Path=/summer/web/**
+        filters:
+        - RewritePath=/summer/web/(?<segment>.*), /$\{segment}
+      - id: route-order
+        uri: lb://summer-order
+        predicates:
+        - Path=/summer/order/**
+        filters:
+        - RewritePath=/summer/order/(?<segment>.*), /$\{segment}
+      - id: route-compute
+        uri: lb://summer-compute
+        predicates:
+        - Path=/summer/compute/**
+        filters:
+        - RewritePath=/summer/compute/(?<segment>.*), /$\{segment}
 eureka:
   client:
     serviceUrl:
       defaultZone: http://peer1:9527/eureka/,http://peer2:9528/eureka/,http://peer3:9529/eureka/
-
-# 配置服务路由
-zuul:
-  routes:
-    api-web:
-      path: /api-web/**
-      serviceId: summer-web
-    api-order:
-      path: /api-order/**
-      serviceId: summer-order
-    api-compute:
-      path: /api-compute/**
-      serviceId: summer-compute
