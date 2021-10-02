@@ -12,18 +12,38 @@ spring:
         - Path=/summer/web/**
         filters:
         - RewritePath=/summer/web/(?<segment>.*), /$\{segment}
+        - name: Hystrix
+          args:
+            name: defaultHystrix
+            fallbackUri: forward:/defaultFallback
       - id: route-order
         uri: lb://summer-order
         predicates:
         - Path=/summer/order/**
         filters:
         - RewritePath=/summer/order/(?<segment>.*), /$\{segment}
+        - name: Hystrix
+          args:
+            name: defaultHystrix
+            fallbackUri: forward:/defaultFallback
       - id: route-compute
         uri: lb://summer-compute
         predicates:
         - Path=/summer/compute/**
         filters:
         - RewritePath=/summer/compute/(?<segment>.*), /$\{segment}
+        - name: Hystrix
+          args:
+            name: defaultHystrix
+            fallbackUri: forward:/defaultFallback
+
+hystrix:
+  command:
+    defaultHystrix:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
 eureka:
   client:
     serviceUrl:
